@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feedback | Garment Textile Pvt Ltd</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <div data-include="../partials/header.html"></div>
+  <main class="main-container">
+    <h1>Feedback</h1>
+    <form id="feedback-form" aria-label="Feedback Form">
+      <div class="form-section">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" required />
+        <label for="email">Your Email</label>
+        <input type="email" id="email" required />
+        <label for="message">Message</label>
+        <textarea id="message" rows="4" required></textarea>
+      </div>
+      <div class="form-actions">
+        <button type="submit">Submit Feedback</button>
+      </div>
+    </form>
+    <div id="feedback-success" style="display:none; color:green; margin-top:18px;">
+      Feedback submitted! Thank you.
+    </div>
+  </main>
+  <div data-include="../partials/footer.html"></div>
+  <script src="../assets/js/include.js"></script>
+  <script>
+    document.getElementById('feedback-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      // TODO: Firebase/Firestore integration
+      document.getElementById('feedback-success').style.display='';
+      this.reset();
+      setTimeout(()=>{document.getElementById('feedback-success').style.display='none';}, 3000);
+    });
+  </script>
+</body>
+</html>

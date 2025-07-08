@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Application Form | Garment Textile Pvt Ltd</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <div data-include="../partials/header.html"></div>
+  <main class="main-container">
+    <h1>Job Application Form</h1>
+    <form id="application-form" aria-label="Job Application Form" enctype="multipart/form-data">
+      <!-- Notice -->
+      <div class="form-section">
+        <h2>Notice of Training</h2>
+        <p>
+          Please read the <a href="marquee-message.html">latest notifications</a> carefully before applying. Ensure your documents are ready and accurate.
+        </p>
+      </div>
+      <!-- Candidate Info -->
+      <div class="form-section">
+        <h2>Candidate Information</h2>
+        <label for="full-name">Full Name</label>
+        <input type="text" id="full-name" required />
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" required />
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" required />
+      </div>
+      <!-- Additional Info -->
+      <div class="form-section">
+        <h2>Additional Information</h2>
+        <label for="job-position">Position Applied For</label>
+        <input type="text" id="job-position" value="" required />
+        <label for="qualification">Qualification</label>
+        <input type="text" id="qualification" required />
+        <label for="experience">Experience (years)</label>
+        <input type="text" id="experience" />
+      </div>
+      <!-- Upload Document -->
+      <div class="form-section">
+        <h2>Upload Documents</h2>
+        <label for="resume">Resume (PDF/Image)</label>
+        <input type="file" id="resume" accept=".pdf,image/*" required />
+      </div>
+      <!-- Preview -->
+      <div class="form-section" id="preview-section" style="display:none;">
+        <h2>Preview</h2>
+        <pre id="preview-content"></pre>
+      </div>
+      <div class="form-actions">
+        <button type="button" id="btn-preview">Preview</button>
+        <button type="submit" id="btn-submit" style="display:none;">Submit</button>
+      </div>
+      <div id="success-message" style="display:none; color:green; margin-top:18px;">
+        Form Submitted Successfully!
+      </div>
+    </form>
+  </main>
+  <div data-include="../partials/footer.html"></div>
+  <script src="../assets/js/include.js"></script>
+  <script>
+    // Autofill job if ?job param in URL
+    const params = new URLSearchParams(window.location.search);
+    if(params.get('job')) {
+      document.getElementById('job-position').value = decodeURIComponent(params.get('job'));
+    }
+    // Preview/Submit logic
+    const form = document.getElementById('application-form');
+    const previewBtn = document.getElementById('btn-preview');
+    const submitBtn = document.getElementById('btn-submit');
+    const previewSection = document.getElementById('preview-section');
+    const previewContent = document.getElementById('preview-content');
+    const successMsg = document.getElementById('success-message');
+    previewBtn.addEventListener('click', function(){
+      let data = '';
+      form.querySelectorAll('input').forEach(inp=>{
+        if(inp.type !== 'file' && inp.value)
+          data += inp.previousElementSibling.textContent + ": " + inp.value + "\\n";
+      });
+      previewContent.textContent = data;
+      previewSection.style.display = '';
+      submitBtn.style.display = '';
+      previewBtn.style.display = 'none';
+    });
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      // TODO: Firebase upload logic
+      previewSection.style.display = 'none';
+      submitBtn.style.display = 'none';
+      previewBtn.style.display = '';
+      form.reset();
+      successMsg.style.display = '';
+      setTimeout(()=>{successMsg.style.display='none';}, 3000);
+    });
+  </script>
+</body>
+</html>

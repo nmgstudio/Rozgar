@@ -1,1 +1,80 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Job Openings | Garment Textile Pvt Ltd</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <div data-include="../partials/header.html"></div>
+  <main class="main-container">
+    <div class="marquee" aria-label="Important Announcements">
+      <marquee behavior="scroll" direction="left" scrollamount="5">
+        Upcoming walk-in interviews on 15th July • New tenders announced • Beware of job frauds •
+      </marquee>
+    </div>
+    <h1>Current Job Openings</h1>
+    <form id="job-filter-form" class="filter-bar" aria-label="Filter jobs">
+      <label for="filter-location">Location:
+        <select id="filter-location" aria-label="Filter by Location">
+          <option value="">All</option>
+          <option value="varanasi">Varanasi</option>
+          <option value="lucknow">Lucknow</option>
+        </select>
+      </label>
+      <label for="filter-type">Type:
+        <select id="filter-type" aria-label="Filter by Job Type">
+          <option value="">All</option>
+          <option value="full-time">Full-Time</option>
+          <option value="contract">Contract</option>
+          <option value="internship">Internship</option>
+        </select>
+      </label>
+      <label for="filter-date">Date:
+        <input type="date" id="filter-date" />
+      </label>
+    </form>
+    <table class="jobs-table" id="jobs-table" aria-label="Job Listings">
+      <thead>
+        <tr>
+          <th>Position</th>
+          <th>Location</th>
+          <th>Type</th>
+          <th>Posted</th>
+          <th>Apply</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-location="Varanasi" data-type="Full-Time" data-date="2025-07-01">
+          <td>Production Manager</td>
+          <td>Varanasi</td>
+          <td>Full-Time</td>
+          <td>2025-07-01</td>
+          <td><a href="application-form.html?job=Production%20Manager" class="btn-apply">Apply</a></td>
+        </tr>
+        <tr data-location="Lucknow" data-type="Internship" data-date="2025-07-03">
+          <td>Textile Design Intern</td>
+          <td>Lucknow</td>
+          <td>Internship</td>
+          <td>2025-07-03</td>
+          <td><a href="application-form.html?job=Textile%20Design%20Intern" class="btn-apply">Apply</a></td>
+        </tr>
+        <tr data-location="Varanasi" data-type="Contract" data-date="2025-07-05">
+          <td>Quality Inspector</td>
+          <td>Varanasi</td>
+          <td>Contract</td>
+          <td>2025-07-05</td>
+          <td><a href="application-form.html?job=Quality%20Inspector" class="btn-apply">Apply</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:22px;">
+      <a href="registration-info.html">How to Register & Apply &rarr;</a>
+    </p>
+  </main>
+  <div data-include="../partials/footer.html"></div>
+  <script src="../assets/js/include.js"></script>
+  <script src="../assets/js/search.js"></script>
+</body>
+</html>
