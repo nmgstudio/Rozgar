@@ -1,1 +1,368 @@
+/* === Global Styles === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f6f9;
+  color: #222;
+  min-height: 100vh;
+}
+a {
+  color: #004080;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  text-decoration: underline;
+  color: #002855;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+/* === Top Bar === */
+.top-bar {
+  background: #2d2d2d;
+  color: #fff;
+  text-align: right;
+  padding: 8px 20px;
+  font-size: 14px;
+}
+.top-bar a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.top-bar a:hover {
+  color: #ffd700;
+}
 
+/* === Header === */
+.company-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: #fff;
+  border-bottom: 2px solid #e0e0e0;
+  position: relative;
+}
+.company-logo img {
+  width: 70px;
+  height: auto;
+}
+.company-title-area {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: 20px;
+  flex-grow: 1;
+}
+.website-name {
+  font-size: 12px;
+  color: #888;
+  position: absolute;
+  left: 110px;
+  top: 52px;
+}
+.company-name {
+  font-size: 22px;
+  color: #2a2a2a;
+  white-space: nowrap;
+  font-weight: bold;
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.search-bar input[type="text"] {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 220px;
+}
+.search-bar button {
+  padding: 6px 12px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.search-bar button:hover {
+  background: #0056b3;
+}
+
+/* === Navigation Menu === */
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  background: #004080;
+  padding: 12px 0;
+  flex-wrap: wrap;
+}
+.nav-menu a {
+  color: #fff;
+  padding: 10px 25px;
+  font-weight: 500;
+  transition: background 0.3s;
+  border-radius: 3px;
+  margin: 0 2px;
+  white-space: nowrap;
+}
+.nav-menu a:hover,
+.nav-menu a.active {
+  background: #003366;
+}
+
+/* === Main Content === */
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px 40px 16px;
+  background: #fff;
+  min-height: 60vh;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #004080;
+  font-weight: 600;
+}
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* === Forms === */
+form {
+  background: #f9fbfd;
+  padding: 22px 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px #ccc3;
+  margin-bottom: 24px;
+}
+.form-section {
+  margin-bottom: 18px;
+}
+label {
+  display: block;
+  margin-bottom: 6px;
+  color: #004080;
+  font-weight: 500;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+input[type="file"],
+select,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 12px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 16px;
+}
+input[type="file"] {
+  padding: 2px;
+}
+button,
+input[type="submit"] {
+  background: #004080;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover,
+input[type="submit"]:hover {
+  background: #003366;
+}
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+/* === Marquee === */
+.marquee {
+  background: #e7f2fd;
+  color: #004080;
+  padding: 8px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* === Job Listing Table === */
+.jobs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.jobs-table th,
+.jobs-table td {
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  text-align: left;
+}
+.jobs-table th {
+  background: #f0f6ff;
+  color: #004080;
+}
+.jobs-table tr:hover {
+  background: #f4faff;
+}
+
+/* === Filter Bar === */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 18px;
+  background: #f6faff;
+  padding: 10px 18px;
+  border-radius: 6px;
+}
+.filter-bar label {
+  margin: 0;
+  font-size: 15px;
+}
+
+/* === Footer === */
+.footer {
+  background: #1c1c1c;
+  color: #ccc;
+  padding: 40px 20px 20px 20px;
+  font-size: 14px;
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.footer-left, .footer-center, .footer-right {
+  flex: 1;
+  margin: 10px;
+  min-width: 240px;
+}
+.footer-left small {
+  font-size: 12px;
+  color: #999;
+}
+.logo-row {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+.logo {
+  height: 50px;
+  width: auto;
+  margin-right: 12px;
+}
+.company-name-footer h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 20px;
+}
+.company-name-footer p {
+  margin: 0;
+  font-size: 14px;
+  color: #aaa;
+}
+.footer-center h3,
+.footer-right h3 {
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 16px;
+}
+.footer-center ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-center li {
+  margin: 5px 0;
+}
+.footer-center a {
+  color: #ccc;
+  text-decoration: none;
+}
+.footer-center a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+.footer-right address {
+  font-style: normal;
+  line-height: 1.6;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #333;
+  padding-top: 10px;
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+.bottom-left,
+.bottom-center,
+.bottom-right {
+  flex: 1;
+  text-align: center;
+}
+.bottom-left {
+  text-align: left;
+}
+.bottom-right {
+  text-align: right;
+}
+
+/* === Accessibility === */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden; clip: rect(1px,1px,1px,1px);
+  white-space: nowrap;
+}
+
+/* === Responsive === */
+@media (max-width: 1000px) {
+  .company-name { font-size: 18px; }
+  .search-bar input { width: 150px; }
+  .nav-menu { flex-wrap: wrap; }
+  .nav-menu a { padding: 10px 15px; }
+  .main-container { padding: 18px 4px 32px 4px; }
+  .footer-top { flex-direction: column; }
+}
+@media (max-width: 600px) {
+  .company-header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px 8px;
+  }
+  .company-name { font-size: 16px; }
+  .website-name { position: static; left: unset; top: unset; text-align: center; margin-bottom: 8px; }
+  .nav-menu { flex-direction: column; align-items: stretch; }
+  .filter-bar { flex-direction: column; gap: 8px; }
+  .footer-top { flex-direction: column; gap: 0; }
+}
