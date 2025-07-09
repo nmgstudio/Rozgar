@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Step 5 - Declaration</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    body { background-color: #f4f8fc; font-family: Arial, sans-serif; margin: 0; }
+    .container { display: flex; min-height: 100vh; }
+    .sidebar { width: 250px; background-color: #e0ecf8; padding: 20px; }
+    .sidebar ul { list-style: none; padding: 0; }
+    .sidebar li { margin: 20px 0; color: #555; }
+    .sidebar li.active { font-weight: bold; color: #007acc; }
+    .main-content { flex: 1; padding: 30px; background-color: #fff; }
+    h2 { color: #003366; margin-bottom: 20px; }
+    form { display: flex; flex-direction: column; gap: 20px; }
+    label { font-weight: bold; }
+    .buttons { margin-top: 20px; }
+    button {
+      background-color: #007acc;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      margin-right: 10px;
+    }
+    button:hover { background-color: #005fa3; }
+    .success {
+      background-color: #d4edda;
+      color: #155724;
+      padding: 20px;
+      border: 1px solid #c3e6cb;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="sidebar">
+    <ul>
+      <li>Step 1: Instructions</li>
+      <li>Step 2: Personal Details</li>
+      <li>Step 3: Password Setup</li>
+      <li>Step 4: Additional Info</li>
+      <li class="active">Step 5: Declaration</li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <h2>Step 5: Declaration</h2>
+    <form id="finalForm">
+      <label>
+        <input type="checkbox" name="declaration" value="Yes" required />
+        I hereby declare that all the information provided is true to the best of my knowledge.
+      </label>
+
+      <div class="buttons">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
+    <div class="success" id="successBox">
+      ✅ Registration Successful!<br>
+      Your Registration Number is: <strong id="regNoDisplay"></strong>
+    </div>
+  </div>
+</div>
+
+<script>
+  function generateRegistrationNo() {
+    const now = new Date();
+    const sum = now.getDay() + now.getDate() + now.getMinutes() + now.getSeconds();
+    return "9519" + sum.toString().padStart(4, '0');
+  }
+
+  document.getElementById("finalForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const step2 = JSON.parse(sessionStorage.getItem("step2") || '{}');
+    const step3 = JSON.parse(sessionStorage.getItem("step3") || '{}');
+    const step4 = JSON.parse(sessionStorage.getItem("step4") || '{}');
+    const regNo = generateRegistrationNo();
+
+    const declaration = document.querySelector("input[name='declaration']").checked ? "Yes" : "No";
+
+    const payload = {
+      registration_no: regNo,
+      ...step2,
+      ...step3,
+      ...step4,
+      declaration: declaration,
+      submitted_at: new Date().toLocaleString()
+    };
+
+    fetch("https://script.google.com/macros/s/YOUR_DEPLOYED_URL/exec", {
+      method: "POST",
+      body: JSON.stringify(payload),
+      headers: { "Content-Type": "application/json" },
+    })
+    .then((res) => res.json())
+    .then((res) => {
+      if (res.status === "success") {
+        document.getElementById("successBox").style.display = "block";
+        document.getElementById("regNoDisplay").textContent = regNo;
+        sessionStorage.clear();
+      } else {
+        alert("Error: " + res.message);
+      }
+    })
+    .catch((err) => {
+      alert("Failed to submit: " + err.message);
+    });
+  });
+</script>
+</body>
+</html>
