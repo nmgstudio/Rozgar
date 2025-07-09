@@ -143,41 +143,37 @@
 </head>
 <body>
 
-  <!-- 🔝 Top Bar -->
-  <div class="top-bar">
-    <a href="pages/feedback.html">Feedback</a>
-    <a href="pages/old-website.html">Old Website</a>
-    <a href="pages/login.html">Login</a>
-    <a href="pages/register.html">Register</a>
+  <!-- Header Include: partials/header.html -->
+<div class="top-bar" role="navigation" aria-label="Top Bar">
+  <a href="https://nmgstudio.github.io/Rozgar/pages/feedback.html">Feedback</a>
+  <a href="https://nmgstudio.github.io/Rozgar/pages/old-website.html">Old Website</a>
+  <a href="https://nmgstudio.github.io/Rozgar/pages/login.html">Login</a>
+  <a href="https://nmgstudio.github.io/Rozgar/pages/register.html">Register</a>
+</div>
+
+<div class="company-header">
+  <div class="company-logo">
+    <img src="https://nmgstudio.github.io/Rozgar/assets/images/garment_logo.png" alt="Garment Textile Pvt Ltd Logo" />
   </div>
-
-  <!-- 🏢 Company Header Line -->
-  <div class="company-header">
-    <div class="company-logo">
-      <img src="assets/images/garment_logo.png" alt="Garment Textile Pvt Ltd Logo" />
-    </div>
-
-    <div class="company-title-area">
-      <div class="company-name">Garment Textile Private Limited</div>
-    </div>
-
-    <div class="search-bar">
-      <input type="text" placeholder="Search..." />
-      <button>🔍</button>
-    </div>
+  <div class="company-title-area">
+    <div class="website-name">mvregularwear.com</div>
+    <div class="company-name" aria-label="Company Name">Garment Textile Private Limited</div>
   </div>
+  <form class="search-bar" role="search" aria-label="Site Search" onsubmit="return false;">
+    <label for="site-search" class="visually-hidden">Search the website</label>
+    <input type="text" id="site-search" placeholder="Search..." aria-label="Search..." />
+    <button id="search-btn" type="submit" aria-label="Search">🔍</button>
+  </form>
+</div>
 
-  <div class="website-name">mvregularwear.com</div>
-
-  <!-- 📋 Navigation Menu -->
-  <nav class="nav-menu">
-    <a href="pages/index.html">Home</a>
-    <a href="pages/marquee-message.html">Marquee Message</a>
-    <a href="pages/for-candidates.html">For Candidates</a>
-    <a href="pages/tender.html">Tender</a>
-    <a href="pages/rti.html">RTI</a>
-    <a href="pages/about.html">About Us</a>
-  </nav>
+<nav class="nav-menu" aria-label="Main Navigation">
+  <a href="https://nmgstudio.github.io/Rozgar/pages/index.html">Home</a>
+  <a href="https://nmgstudio.github.io/Rozgar/pages/marquee-message.html">Marquee Message</a>
+  <a href="https://nmgstudio.github.io/Rozgar/pages/for-candidates.html">For Candidates</a>
+  <a href="https://nmgstudio.github.io/Rozgar/pages/tender.html">Tender</a>
+  <a href="https://nmgstudio.github.io/Rozgar/pages/rti.html">RTI</a>
+  <a href="https://nmgstudio.github.io/Rozgar/pages/about.html">About Us</a>
+</nav>
 
 </body>
 </html>
