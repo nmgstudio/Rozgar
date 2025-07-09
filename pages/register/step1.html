@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Candidate Registration - Step 1</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f8fc;
+    }
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 250px;
+      background-color: #e0ecf8;
+      padding: 20px;
+    }
+    .sidebar h2 {
+      font-size: 18px;
+      color: #003366;
+    }
+    .step {
+      margin: 20px 0;
+      color: #555;
+    }
+    .step.active {
+      font-weight: bold;
+      color: #007acc;
+    }
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      background-color: #ffffff;
+    }
+    .reg-header {
+      font-size: 22px;
+      color: #003366;
+      margin-bottom: 10px;
+    }
+    .instructions {
+      font-size: 16px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .reg-number {
+      padding: 10px;
+      background-color: #d9edf7;
+      border-left: 5px solid #31708f;
+      margin-bottom: 20px;
+      color: #005580;
+      font-weight: bold;
+    }
+    button {
+      background-color: #007acc;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body onload="displayRegNumber()">
+  <div class="container">
+    <div class="sidebar">
+      <h2>Registration Steps</h2>
+      <div class="step active">Step 1: Instructions</div>
+      <div class="step">Step 2: Personal Details</div>
+      <div class="step">Step 3: Password Setup</div>
+      <div class="step">Step 4: Additional Info</div>
+      <div class="step">Step 5: Declaration</div>
+    </div>
+
+    <div class="main-content">
+      <div class="reg-header">Step 1: Read Before You Proceed</div>
+      <div class="instructions">
+        Please read the following carefully before starting the registration:
+        <ul>
+          <li>The registration process is divided into 5 steps.</li>
+          <li>Each step must be completed before proceeding to the next.</li>
+          <li>Your details must match official documents like Aadhaar and educational certificates.</li>
+          <li>Your registration number is auto-generated and required for login.</li>
+        </ul>
+      </div>
+      <div class="reg-number">
+        Your Registration Number: <span id="regNo">Generating...</span>
+      </div>
+      <button onclick="goToStep2()">Continue to Step 2</button>
+    </div>
+  </div>
+
+  <script>
+    function displayRegNumber() {
+      const now = new Date();
+      const dd = now.getDate();
+      const day = now.getDay();
+      const mm = now.getMinutes();
+      const ss = now.getSeconds();
+      const sum = day + dd + mm + ss;
+      const regNo = '9519' + sum.toString().padStart(4, '0');
+      document.getElementById('regNo').innerText = regNo;
+      sessionStorage.setItem('registration_no', regNo);
+    }
+
+    function goToStep2() {
+      window.location.href = "register-step2.html";
+    }
+  </script>
+</body>
+</html>
