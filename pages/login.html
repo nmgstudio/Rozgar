@@ -2,36 +2,136 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login | Garment Textile Pvt Ltd</title>
-  <link rel="stylesheet" href="../assets/css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Garment Textile Pvt Ltd</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #e0f2ff, #ffffff);
+      font-family: "Segoe UI", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login-box {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      width: 100%;
+      max-width: 400px;
+      animation: slideIn 0.6s ease;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .login-box h2 {
+      text-align: center;
+      color: #003366;
+      margin-bottom: 30px;
+    }
+    .login-box label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    .login-box input:focus {
+      border-color: #007acc;
+      outline: none;
+    }
+    .login-box button {
+      background-color: #007acc;
+      color: white;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .login-box button:hover {
+      background-color: #005fa3;
+    }
+    .register-link {
+      text-align: center;
+      margin-top: 15px;
+    }
+    .register-link a {
+      text-decoration: none;
+      color: #007acc;
+      font-weight: bold;
+    }
+    .message {
+      text-align: center;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-  <div data-include="../partials/header.html"></div>
-  <main class="main-container">
-    <h1>Login</h1>
-    <form id="login-form" aria-label="Login Form">
-      <div class="form-section">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" required autocomplete="username" aria-required="true" />
-      </div>
-      <div class="form-section">
-        <label for="password">Password</label>
-        <input type="password" id="password" required autocomplete="current-password" aria-required="true" />
-      </div>
-      <div class="form-actions">
-        <button type="submit">Login</button>
-        <a href="register.html" style="margin-left:10px;">Register</a>
-      </div>
+  <div class="login-box">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label for="email">Email</label>
+      <input type="email" id="email" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" required />
+
+      <button type="submit">Login</button>
+      <div class="message" id="messageBox"></div>
     </form>
-  </main>
-  <div data-include="../partials/footer.html"></div>
-  <script src="../assets/js/include.js"></script>
+    <div class="register-link">
+      New user? <a href="/pages/register/step1.html">Register here</a>
+    </div>
+  </div>
+
   <script>
-    document.getElementById('login-form').addEventListener('submit', function(e){
+    const loginForm = document.getElementById("loginForm");
+    const messageBox = document.getElementById("messageBox");
+
+    loginForm.addEventListener("submit", function (e) {
       e.preventDefault();
-      // TODO: Firebase Auth integration
-      alert('Login submitted (demo only)');
+
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      messageBox.textContent = "Verifying...";
+
+      fetch("https://script.google.com/macros/s/YOUR_DEPLOYED_URL/exec")
+        .then((res) => res.json())
+        .then((data) => {
+          const user = data.find(
+            (row) => row.Email === email && row.Password === password
+          );
+
+          if (user) {
+            messageBox.style.color = "green";
+            messageBox.textContent = "✅ Login successful!";
+            setTimeout(() => {
+              // redirect to dashboard or homepage
+              window.location.href = "/pages/dashboard.html";
+            }, 1500);
+          } else {
+            messageBox.style.color = "red";
+            messageBox.textContent = "❌ Invalid email or password!";
+          }
+        })
+        .catch((err) => {
+          messageBox.style.color = "red";
+          messageBox.textContent = "❌ Network error: " + err.message;
+        });
     });
   </script>
 </body>
