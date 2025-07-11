@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 <body>
+  <div data-include="../../partials/header.html"></div>
   <div class="registration-container">
     <aside class="sidebar">
       <ul>
@@ -59,6 +60,12 @@
     </main>
   </div>
 
+  <div data-include="../../partials/footer.html"></div>
+  
+
+    <script src="../../assets/js/include.js"></script>
+    <script src="../../assets/js/search.js"></script>
+
   <script>
     function togglePassword() {
       const pwd = document.getElementById("password");
@@ -75,7 +82,7 @@
       sessionStorage.setItem("sec_q2", document.getElementById("sec_q2").value);
       sessionStorage.setItem("ans2", document.getElementById("ans2").value);
 
-      window.location.href = "register-step4.html";
+      window.location.href = "step4.html";
     });
   </script>
 </body>
