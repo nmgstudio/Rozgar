@@ -38,6 +38,7 @@
 </head>
 <body>
 <div class="container">
+  <div data-include="../partials/header.html"></div>
   <div class="sidebar">
     <ul>
       <li>Step 1: Instructions</li>
@@ -66,7 +67,11 @@
       Your Registration Number is: <strong id="regNoDisplay"></strong>
     </div>
   </div>
+    <div data-include="../partials/footer.html"></div>
 </div>
+
+  <script src="../assets/js/include.js"></script>
+  <script src="../assets/js/search.js"></script>
 
 <script>
   function generateRegistrationNo() {
