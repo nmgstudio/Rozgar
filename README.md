@@ -21,8 +21,11 @@ A professional, accessible, and responsive multi-page job notification website f
 ├── pages/
 │   ├── index.html
 │   ├── login.html
-│   ├── register.html
-│   ├── registration-info.html
+│   ├── register/
+│   │   ├── step1.html
+│   │   ├── step2.html
+│   │   ├── step3.html
+│   │   ├── step4.html
 │   ├── application-form.html
 │   ├── feedback.html
 │   ├── old-website.html
