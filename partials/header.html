@@ -5,148 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Garment Textile Private Limited</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: "Segoe UI", sans-serif;
-      background-color: #f4f6f9;
-    }
-
-    /* 🔝 Top Bar */
-    .top-bar {
-      background-color: #2d2d2d;
-      color: white;
-      padding: 8px 20px;
-      font-size: 14px;
-      display: flex; /* Use flexbox for alignment */
-      justify-content: space-between; /* Pushes items to ends */
-      align-items: center; /* Vertically center items */
-    }
-    
-    .top-bar .left-section, .top-bar .right-section {
-        display: flex;
-        align-items: center;
-        gap: 20px; /* Space between links */
-    }
-
-    .top-bar a {
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .top-bar a:hover {
-      color: #ffd700;
-    }
-    
-    #user-info-display {
-        color: #ffd700;
-        font-weight: 500;
-    }
-
-    /* 🏢 Company Header Line */
-    .company-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 15px 30px;
-      background-color: white;
-      border-bottom: 2px solid #e0e0e0;
-    }
-
-    .company-logo img {
-      width: 70px;
-      height: auto;
-    }
-
-    .company-title-area {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-grow: 1;
-      margin-left: 20px;
-    }
-
-    .website-name {
-      font-size: 12px;
-      color: #888;
-      position: absolute;
-      left: 135px;
-      top: 45px;
-    }
-
-    .company-name {
-      font-size: 22px;
-      color: #2a2a2a;
-      white-space: nowrap;
-    }
-
-    .search-bar {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .search-bar input {
-      padding: 6px 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 14px;
-      width: 220px;
-    }
-
-    .search-bar button {
-      padding: 6px 12px;
-      background: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .search-bar button:hover {
-      background: #0056b3;
-    }
-
-    /* 📋 Menu Bar */
-    .nav-menu {
-      display: flex;
-      justify-content: center;
-      background: #004080;
-      padding: 12px 0;
-    }
-
-    .nav-menu a {
-      color: white;
-      padding: 10px 25px;
-      text-decoration: none;
-      font-weight: 500;
-      white-space: nowrap;
-      transition: background 0.3s ease;
-    }
-
-    .nav-menu a:hover {
-      background: #003366;
-    }
-
-    /* Prevent elements from breaking */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: "Segoe UI", sans-serif; background-color: #f4f6f9; }
+    .top-bar { background-color: #2d2d2d; color: white; padding: 8px 20px; font-size: 14px; display: flex; justify-content: space-between; align-items: center; }
+    .top-bar .left-section, .top-bar .right-section { display: flex; align-items: center; gap: 20px; }
+    .top-bar a { color: #fff; text-decoration: none; transition: color 0.3s ease; }
+    .top-bar a:hover { color: #ffd700; }
+    #user-info-display { color: #ffd700; font-weight: 500; }
+    .company-header { display: flex; align-items: center; justify-content: space-between; padding: 15px 30px; background-color: white; border-bottom: 2px solid #e0e0e0; }
+    .company-logo img { width: 70px; height: auto; }
+    .company-title-area { display: flex; align-items: center; gap: 20px; flex-grow: 1; margin-left: 20px; }
+    .website-name { font-size: 12px; color: #888; position: absolute; left: 135px; top: 45px; }
+    .company-name { font-size: 22px; color: #2a2a2a; white-space: nowrap; }
+    .search-bar { display: flex; align-items: center; gap: 6px; }
+    .search-bar input { padding: 6px 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; width: 220px; }
+    .search-bar button { padding: 6px 12px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    .search-bar button:hover { background: #0056b3; }
+    .nav-menu { display: flex; justify-content: center; background: #004080; padding: 12px 0; }
+    .nav-menu a { color: white; padding: 10px 25px; text-decoration: none; font-weight: 500; white-space: nowrap; transition: background 0.3s ease; }
+    .nav-menu a:hover { background: #003366; }
     @media screen and (max-width: 1000px) {
-      .company-name {
-        font-size: 18px;
-      }
-      .search-bar input {
-        width: 150px;
-      }
-      .nav-menu {
-        flex-wrap: wrap;
-      }
-      .nav-menu a {
-        padding: 10px 15px;
-      }
+      .company-name { font-size: 18px; }
+      .search-bar input { width: 150px; }
+      .nav-menu { flex-wrap: wrap; }
+      .nav-menu a { padding: 10px 15px; }
     }
   </style>
 </head>
@@ -155,15 +37,17 @@
 <!-- Header -->
 <div class="top-bar" role="navigation" aria-label="Top Bar">
   <div class="left-section">
-      <a id="profile-link" href="https://9000-firebase-studio-1752418737072.cluster-ancjwrkgr5dvux4qug5rbzyc2y.cloudworkstations.dev/profile" style="display: none;">Profile</a>
+      <!-- The Profile link and user info will appear here -->
+      <a id="profile-link" href="<YOUR_PROFILE_PAGE_URL>" style="display: none;">Profile</a>
       <span id="user-info-display"></span>
   </div>
   
   <div class="right-section">
       <a href="https://nmgstudio.github.io/Rozgar/pages/feedback.html">Feedback</a>
       <a href="https://mvregularwear.com/">Old Website</a>
-      <a id="login-link" href="https://6000-firebase-studio-1752418737072.cluster-ancjwrkgr5dvux4qug5rbzyc2y.cloudworkstations.dev/login">Login</a>
-      <a id="register-link" href="https://9000-firebase-studio-1752418737072.cluster-ancjwrkgr5dvux4qug5rbzyc2y.cloudworkstations.dev">Register</a>
+      <!-- Login/Register/Logout links -->
+      <a id="login-link" href="<YOUR_LOGIN_PAGE_URL>">Login</a>
+      <a id="register-link" href="<YOUR_REGISTER_PAGE_URL>">Register</a>
       <a id="logout-link" href="#" style="display: none; cursor: pointer;">Logout</a>
   </div>
 </div>
@@ -192,7 +76,7 @@
   <a href="https://nmgstudio.github.io/Rozgar/pages/about.html">About Us</a>
 </nav>
 
-<!-- JavaScript to handle login display -->
+<!-- !! IMPORTANT JAVASCRIPT !! -->
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const userInfoDisplay = document.getElementById('user-info-display');
@@ -206,7 +90,7 @@
       loginLink.style.display = 'none';
       registerLink.style.display = 'none';
       logoutLink.style.display = 'inline';
-      profileLink.style.display = 'inline'; // Show profile link
+      profileLink.style.display = 'inline';
     }
 
     const urlParams = new URLSearchParams(window.location.search);
@@ -229,7 +113,7 @@
       event.preventDefault();
       localStorage.removeItem('userName');
       localStorage.removeItem('userRegNum');
-      window.location.href = 'https://nmgstudio.github.io/Rozgar/pages/index.html';
+      window.location.href = window.location.pathname; // Reload without params
     });
   });
 </script>
