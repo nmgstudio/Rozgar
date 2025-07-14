@@ -20,20 +20,28 @@
     .top-bar {
       background-color: #2d2d2d;
       color: white;
-      text-align: right;
       padding: 8px 20px;
       font-size: 14px;
+      display: flex; /* Use flexbox for alignment */
+      justify-content: flex-end; /* Align items to the right */
+      align-items: center; /* Center items vertically */
+      gap: 20px; /* Space between items */
     }
 
     .top-bar a {
       color: #fff;
-      margin-left: 20px;
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
     .top-bar a:hover {
       color: #ffd700;
+    }
+    
+    #user-info-display {
+        color: #ffd700;
+        font-weight: 500;
+        margin-right: auto; /* Pushes everything else to the right */
     }
 
     /* 🏢 Company Header Line */
@@ -143,12 +151,18 @@
 </head>
 <body>
 
-  <!-- Header Include: partials/header.html -->
+<!-- Header -->
 <div class="top-bar" role="navigation" aria-label="Top Bar">
+  <!-- This span will show the user info -->
+  <span id="user-info-display"></span>
+  
   <a href="https://nmgstudio.github.io/Rozgar/pages/feedback.html">Feedback</a>
   <a href="https://mvregularwear.com/">Old Website</a>
-  <a href="https://6000-firebase-studio-1752418737072.cluster-ancjwrkgr5dvux4qug5rbzyc2y.cloudworkstations.dev/login" class="btn btn-secondary">Login</a>
-  <a href="https://9000-firebase-studio-1752418737072.cluster-ancjwrkgr5dvux4qug5rbzyc2y.cloudworkstations.dev" class="btn btn-primary">Register</a>
+  
+  <!-- These will be hidden/shown by script -->
+  <a id="login-link" href="https://6000-firebase-studio-1752418737072.cluster-ancjwrkgr5dvux4qug5rbzyc2y.cloudworkstations.dev/login">Login</a>
+  <a id="register-link" href="https://9000-firebase-studio-1752418737072.cluster-ancjwrkgr5dvux4qug5rbzyc2y.cloudworkstations.dev">Register</a>
+  <a id="logout-link" href="#" style="display: none; cursor: pointer;">Logout</a>
 </div>
 
 <div class="company-header">
@@ -175,6 +189,53 @@
   <a href="https://nmgstudio.github.io/Rozgar/pages/about.html">About Us</a>
 </nav>
 
+<!-- JavaScript to handle login display -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const userInfoDisplay = document.getElementById('user-info-display');
+    const loginLink = document.getElementById('login-link');
+    const registerLink = document.getElementById('register-link');
+    const logoutLink = document.getElementById('logout-link');
+
+    function updateView(name, regNum) {
+      // Update text and show/hide links
+      userInfoDisplay.textContent = `${name} | ${regNum}`;
+      loginLink.style.display = 'none';
+      registerLink.style.display = 'none';
+      logoutLink.style.display = 'inline';
+    }
+
+    // 1. Check URL parameters first
+    const urlParams = new URLSearchParams(window.location.search);
+    const name = urlParams.get('name');
+    const regNum = urlParams.get('regNum');
+
+    if (name && regNum) {
+      // If found in URL, save to localStorage for persistence
+      localStorage.setItem('userName', name);
+      localStorage.setItem('userRegNum', regNum);
+      updateView(name, regNum);
+    } else {
+      // 2. If not in URL, check localStorage
+      const storedName = localStorage.getItem('userName');
+      const storedRegNum = localStorage.getItem('userRegNum');
+      if (storedName && storedRegNum) {
+        updateView(storedName, storedRegNum);
+      }
+    }
+
+    // 3. Add logout functionality
+    logoutLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      // Clear stored data
+      localStorage.removeItem('userName');
+      localStorage.removeItem('userRegNum');
+      
+      // Redirect to clean home page
+      window.location.href = 'https://nmgstudio.github.io/Rozgar/pages/index.html';
+    });
+  });
+</script>
+
 </body>
 </html>
-
