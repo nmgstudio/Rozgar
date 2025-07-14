@@ -40,3 +40,36 @@ function loadSearchLogic() {
   if (typeof setupSearchBar === 'function') setupSearchBar();
 }
 document.addEventListener('DOMContentLoaded', includeHTML);
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    // URL से पैरामीटर लेने की कोशिश करें
+    const urlParams = new URLSearchParams(window.location.search);
+    const name = urlParams.get('name');
+    const regNum = urlParams.get('regNum');
+
+    // अगर नाम और रजिस्ट्रेशन नंबर मौजूद है
+    if (name && regNum) {
+        // उस एलिमेंट को ढूंढें जहाँ आप यह जानकारी दिखाना चाहते हैं
+        // आपको अपनी वेबसाइट के HTML के अनुसार सही सेलेक्टर डालना होगा
+        const userInfoElement = document.querySelector('#top-header-user-info'); // उदाहरण सेलेक्टर
+
+        if (userInfoElement) {
+            userInfoElement.textContent = `${name} | ${regNum}`;
+        }
+        
+        // लोकल स्टोरेज में सेव करें ताकि पेज रीलोड होने पर भी जानकारी बनी रहे
+        localStorage.setItem('userName', name);
+        localStorage.setItem('userRegNum', regNum);
+
+    } else {
+        // अगर URL में नहीं है, तो लोकल स्टोरेज से लेने की कोशिश करें
+        const storedName = localStorage.getItem('userName');
+        const storedRegNum = localStorage.getItem('userRegNum');
+        if (storedName && storedRegNum) {
+             const userInfoElement = document.querySelector('#top-header-user-info'); // उदाहरण सेलेक्टर
+             if (userInfoElement) {
+                userInfoElement.textContent = `${storedName} | ${storedRegNum}`;
+            }
+        }
+    }
+});
