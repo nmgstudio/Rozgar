@@ -5,36 +5,160 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Job Openings | Garment Textile Pvt Ltd</title>
   <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f0f4f9;
+      margin: 0;
+    }
+    .main-container {
+      padding: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .hero-banner {
+      background: linear-gradient(to right, #005bac, #007bff);
+      color: white;
+      padding: 40px 25px;
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .hero-banner h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+    .hero-banner p {
+      margin-top: 10px;
+      font-size: 1.1rem;
+    }
+    .highlighted-job {
+      background: #eaf3ff;
+      border-left: 5px solid #007bff;
+      padding: 25px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+    }
+    .highlighted-job h2 {
+      color: #004080;
+    }
+    .highlighted-job ul {
+      margin-left: 18px;
+    }
+    .highlighted-job .apply-btn {
+      display: inline-block;
+      margin-top: 15px;
+      background: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .job-categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .job-card {
+      background: white;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
+    }
+    .job-card h3 {
+      color: #005bac;
+      margin-top: 0;
+    }
+    .job-card a {
+      display: inline-block;
+      margin-top: 10px;
+      color: white;
+      background: #007bff;
+      padding: 8px 15px;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    .jobs-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+    .jobs-table th, .jobs-table td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: center;
+    }
+    .jobs-table th {
+      background: #007bff;
+      color: white;
+    }
+    .btn-apply {
+      background: #007bff;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+    .marquee {
+      background: #d1ecff;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-left: 4px solid #007bff;
+    }
+  </style>
 </head>
 <body>
+
   <div data-include="../partials/header.html"></div>
+
   <main class="main-container">
+
     <div class="marquee" aria-label="Important Announcements">
       <marquee behavior="scroll" direction="left" scrollamount="5">
-        Upcoming walk-in interviews on 15th July • New tenders announced • Beware of job frauds •
+        🔔 Upcoming walk-in interviews on 15th July • New tenders announced • Beware of job frauds • Training slots filling fast
       </marquee>
     </div>
-    <h1>Current Job Openings</h1>
-    <form id="job-filter-form" class="filter-bar" aria-label="Filter jobs">
-      <label for="filter-location">Location:
-        <select id="filter-location" aria-label="Filter by Location">
-          <option value="">All</option>
-          <option value="varanasi">Varanasi</option>
-          <option value="lucknow">Lucknow</option>
-        </select>
-      </label>
-      <label for="filter-type">Type:
-        <select id="filter-type" aria-label="Filter by Job Type">
-          <option value="">All</option>
-          <option value="full-time">Full-Time</option>
-          <option value="contract">Contract</option>
-          <option value="internship">Internship</option>
-        </select>
-      </label>
-      <label for="filter-date">Date:
-        <input type="date" id="filter-date" />
-      </label>
-    </form>
+
+    <section class="hero-banner">
+      <h1>Welcome to Garment Textile Pvt Ltd</h1>
+      <p>Your trusted platform for reliable job opportunities across India</p>
+    </section>
+
+    <section class="highlighted-job">
+      <h2>🌟 Samridh Rozgar-1 | Semi-Government Job Drive</h2>
+      <p>This special employment initiative offers semi-government aligned roles with office-based work and formal onboarding.</p>
+      <ul>
+        <li>📌 Office Assistant – 5 Posts</li>
+        <li>📌 Customer Executive – 15 Posts</li>
+        <li>📌 Telecaller – 45 Posts</li>
+        <li>📌 Data Collector / Brand Promoter – 40 Posts</li>
+      </ul>
+      <p><strong>Eligible Qualifications:</strong> 10th Pass, 12th Pass, Graduate</p>
+      <a href="https://6000-firebase-studio-1752418737072.cluster-ancjwrkgr5dvux4qug5rbzyc2y.cloudworkstations.dev/apply-1" class="apply-btn">Apply Now</a>
+    </section>
+
+    <section class="job-categories">
+      <div class="job-card">
+        <h3>10th Pass Jobs</h3>
+        <p>Entry-level jobs in operations, delivery, and telecalling. Apply early to avoid closure!</p>
+        <a href="https://6000-firebase-studio-1752418737072.cluster-ancjwrkgr5dvux4qug5rbzyc2y.cloudworkstations.dev/apply-1">Apply</a>
+      </div>
+      <div class="job-card">
+        <h3>12th Pass Jobs</h3>
+        <p>Data collection, customer interaction, and fieldwork roles for intermediate graduates.</p>
+        <a href="https://6000-firebase-studio-1752418737072.cluster-ancjwrkgr5dvux4qug5rbzyc2y.cloudworkstations.dev/apply-1">Apply</a>
+      </div>
+      <div class="job-card">
+        <h3>Graduate Jobs</h3>
+        <p>Office roles in admin, tele-support, sales, and client communication with growth potential.</p>
+        <a href="https://6000-firebase-studio-1752418737072.cluster-ancjwrkgr5dvux4qug5rbzyc2y.cloudworkstations.dev/apply-1">Apply</a>
+      </div>
+    </section>
+
+    <h2>📋 Current Job Openings</h2>
     <table class="jobs-table" id="jobs-table" aria-label="Job Listings">
       <thead>
         <tr>
@@ -46,21 +170,21 @@
         </tr>
       </thead>
       <tbody>
-        <tr data-location="Varanasi" data-type="Full-Time" data-date="2025-07-01">
+        <tr>
           <td>Production Manager</td>
           <td>Varanasi</td>
           <td>Full-Time</td>
           <td>2025-07-01</td>
           <td><a href="application-form.html?job=Production%20Manager" class="btn-apply">Apply</a></td>
         </tr>
-        <tr data-location="Lucknow" data-type="Internship" data-date="2025-07-03">
+        <tr>
           <td>Textile Design Intern</td>
           <td>Lucknow</td>
           <td>Internship</td>
           <td>2025-07-03</td>
           <td><a href="application-form.html?job=Textile%20Design%20Intern" class="btn-apply">Apply</a></td>
         </tr>
-        <tr data-location="Varanasi" data-type="Contract" data-date="2025-07-05">
+        <tr>
           <td>Quality Inspector</td>
           <td>Varanasi</td>
           <td>Contract</td>
@@ -69,11 +193,14 @@
         </tr>
       </tbody>
     </table>
-    <p style="margin-top:22px;">
-      <a href="registration-info.html">How to Register & Apply &rarr;</a>
+
+    <p style="text-align:center;">
+      <a href="registration-info.html">📑 How to Register & Apply →</a>
     </p>
   </main>
+
   <div data-include="../partials/footer.html"></div>
+
   <script src="../assets/js/include.js"></script>
   <script src="../assets/js/search.js"></script>
 </body>
