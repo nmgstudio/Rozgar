@@ -8,108 +8,109 @@
   <style>
     body {
       font-family: "Segoe UI", sans-serif;
-      font-size: 14px;
-      background-color: #f0f4f9;
+      font-size: 13px;
+      background-color: #f4f7fb;
       margin: 0;
+      color: #333;
     }
     .main-container {
-      padding: 20px;
       max-width: 1100px;
       margin: auto;
+      padding: 20px;
+    }
+    .marquee {
+      background: #e1f0ff;
+      border-left: 4px solid #007bff;
+      padding: 8px;
+      margin-bottom: 20px;
     }
     .hero-banner {
-      background: linear-gradient(to right, #005bac, #007bff);
+      background: linear-gradient(to right, #004080, #007bff);
       color: white;
-      padding: 30px 20px;
-      border-radius: 8px;
+      padding: 25px 20px;
       text-align: center;
-      margin-bottom: 25px;
+      border-radius: 8px;
+      margin-bottom: 30px;
     }
     .hero-banner h1 {
-      margin: 0;
-      font-size: 22px;
+      font-size: 20px;
+      margin-bottom: 5px;
     }
     .hero-banner p {
-      margin-top: 8px;
-      font-size: 14px;
+      font-size: 13px;
     }
     .highlighted-job {
-      background: #eaf3ff;
-      border-left: 4px solid #007bff;
-      padding: 20px;
+      background: white;
+      border-left: 4px solid #005bac;
+      padding: 25px 20px;
       border-radius: 6px;
       margin-bottom: 30px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
     .highlighted-job h2 {
       color: #004080;
-      font-size: 18px;
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+    .highlighted-job p {
+      margin: 8px 0;
     }
     .highlighted-job ul {
       padding-left: 20px;
       margin: 10px 0;
+      line-height: 1.6;
     }
-    .highlighted-job .apply-btn {
+    .highlighted-job li {
+      margin-bottom: 5px;
+    }
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .btn-apply, .btn-guide {
       background: #007bff;
       color: white;
-      padding: 8px 18px;
-      text-decoration: none;
+      padding: 10px 20px;
       font-size: 13px;
-      border-radius: 4px;
-      display: inline-block;
-      margin-top: 10px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+      border: none;
+      box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+    }
+    .btn-apply:hover, .btn-guide:hover {
+      background: #0056b3;
     }
     .job-categories {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 15px;
-      margin-bottom: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
     }
     .job-card {
-      background: white;
-      border: 1px solid #ccc;
+      background: #ffffff;
+      border: 1px solid #ddd;
       padding: 15px;
-      border-radius: 6px;
+      border-radius: 5px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
     .job-card h3 {
-      font-size: 15px;
+      font-size: 14px;
+      margin-bottom: 8px;
       color: #005bac;
-      margin: 0 0 5px 0;
+    }
+    .job-card p {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 10px;
     }
     .job-card a {
       background: #007bff;
       color: white;
-      padding: 6px 14px;
-      font-size: 13px;
-      border-radius: 4px;
-      display: inline-block;
-      margin-top: 8px;
-      text-decoration: none;
-    }
-    .jobs-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 13px;
-    }
-    .jobs-table th, .jobs-table td {
-      border: 1px solid #ccc;
-      padding: 10px;
-      text-align: center;
-    }
-    .jobs-table th {
-      background-color: #007bff;
-      color: white;
-    }
-    .marquee {
-      background: #d1ecff;
-      padding: 8px;
-      border-left: 4px solid #007bff;
-      margin-bottom: 20px;
-    }
-    .btn-apply {
-      background: #007bff;
-      color: white;
-      padding: 5px 12px;
-      font-size: 13px;
+      padding: 6px 12px;
+      font-size: 12px;
       border-radius: 4px;
       text-decoration: none;
     }
@@ -119,92 +120,60 @@
   <div data-include="../partials/header.html"></div>
 
   <main class="main-container">
-
     <div class="marquee">
-      <marquee behavior="scroll" direction="left" scrollamount="5">
-        🔔 Interviews on 15th July • New tenders released • Avoid job frauds • Register for Samridh Rozgar-1
+      <marquee behavior="scroll" direction="left" scrollamount="4">
+        Upcoming Interviews • New Tender Released • Registration open for Samridh Rozgar-1 • Avoid job frauds
       </marquee>
     </div>
 
     <section class="hero-banner">
       <h1>Welcome to Garment Textile Pvt Ltd</h1>
-      <p>Find latest jobs and apply online through secure platform</p>
+      <p>Recruitment for manufacturing, design, support and field roles</p>
     </section>
 
     <section class="highlighted-job">
-      <h2>🌟 Samridh Rozgar-1 (Semi-Govt Job Drive)</h2>
-      <p>Special initiative offering stable jobs with formal training & official documentation.</p>
+      <h2>Samridh Rozgar-1 | Semi-Government Job Drive</h2>
+      <p>This is a special hiring initiative by Garment Textile Pvt Ltd in collaboration with selected training and support partners to generate employment across India.</p>
+
+      <p><strong>Available Posts:</strong></p>
       <ul>
-        <li>Office Assistant – 5</li>
-        <li>Customer Executive – 15</li>
-        <li>Telecaller – 45</li>
-        <li>Data Collector / Brand Promoter – 40</li>
+        <li>Office Assistant –                5 Vacancies</li>
+        <li>Customer Executive –              15 Vacancies</li>
+        <li>Telecaller –                      45 Vacancies</li>
+        <li>Data Collector / Brand Promoter – 40 Vacancies</li>
       </ul>
-      <p><strong>Eligibility:</strong> 10th Pass, 12th Pass, Graduate</p>
-      <a href="https://6000-firebase-studio-1752418737072.cluster-ancjwrkgr5dvux4qug5rbzyc2y.cloudworkstations.dev/apply-1" class="apply-btn">Apply Now</a>
-    </section>
 
+      <p><strong>Eligibility:</strong> Candidates who have completed 10th / 12th / Graduation from any recognized board or university.</p>
+      <p><strong>Benefits:</strong> Formal training, skill certification, official ID, professional attire requirement. Women-specific security arrangements available. Selection includes written screening & interview.</p>
+
+      <div class="btn-row">
+        <a href="https://6000-firebase-studio-1752418737072.cluster-ancjwrkgr5dvux4qug5rbzyc2y.cloudworkstations.dev/apply-1" class="btn-apply">Apply for Rozgar-1</a>
+        <a href="registration-info.html" class="btn-guide">How to Register & Apply</a>
+      </div>
+    </section>
+<h3>Vacancies are also available for</h3>
     <section class="job-categories">
+      
       <div class="job-card">
-        <h3>10th Pass Jobs</h3>
-        <p>Support, field & beginner roles with in-house training</p>
-        <a href="https://6000-firebase-studio-1752418737072.cluster-ancjwrkgr5dvux4qug5rbzyc2y.cloudworkstations.dev/apply-1">View</a>
+        <h3>10th Pass</h3>
+        <p>Entry-level jobs like courier, support, field and data work.</p>
+        <a href="https://6000-firebase-studio-1752418737072.cluster-ancjwrkgr5dvux4qug5rbzyc2y.cloudworkstations.dev/apply-1">Apply</a>
       </div>
       <div class="job-card">
-        <h3>12th Pass Jobs</h3>
-        <p>Telecalling, customer service, collection & more</p>
-        <a href="https://6000-firebase-studio-1752418737072.cluster-ancjwrkgr5dvux4qug5rbzyc2y.cloudworkstations.dev/apply-1">View</a>
+        <h3>12th Pass</h3>
+        <p>Customer support, Telecalling, Office Entry profiles.</p>
+        <a href="https://6000-firebase-studio-1752418737072.cluster-ancjwrkgr5dvux4qug5rbzyc2y.cloudworkstations.dev/apply-1">Apply</a>
       </div>
       <div class="job-card">
-        <h3>Graduate Jobs</h3>
-        <p>Admin, assistant & executive-level office profiles</p>
-        <a href="https://6000-firebase-studio-1752418737072.cluster-ancjwrkgr5dvux4qug5rbzyc2y.cloudworkstations.dev/apply-1">View</a>
+        <h3>Graduate</h3>
+        <p>Clerical, Back-office, Branding, and Admin profiles.</p>
+        <a href="https://6000-firebase-studio-1752418737072.cluster-ancjwrkgr5dvux4qug5rbzyc2y.cloudworkstations.dev/apply-1">Apply</a>
       </div>
     </section>
 
-    <h2 style="margin-bottom:10px;">📋 Other Job Openings</h2>
-    <table class="jobs-table">
-      <thead>
-        <tr>
-          <th>Position</th>
-          <th>Location</th>
-          <th>Type</th>
-          <th>Posted</th>
-          <th>Apply</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Production Manager</td>
-          <td>Varanasi</td>
-          <td>Full-Time</td>
-          <td>2025-07-01</td>
-          <td><a href="application-form.html?job=Production%20Manager" class="btn-apply">Apply</a></td>
-        </tr>
-        <tr>
-          <td>Textile Design Intern</td>
-          <td>Lucknow</td>
-          <td>Internship</td>
-          <td>2025-07-03</td>
-          <td><a href="application-form.html?job=Textile%20Design%20Intern" class="btn-apply">Apply</a></td>
-        </tr>
-        <tr>
-          <td>Quality Inspector</td>
-          <td>Varanasi</td>
-          <td>Contract</td>
-          <td>2025-07-05</td>
-          <td><a href="application-form.html?job=Quality%20Inspector" class="btn-apply">Apply</a></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p style="text-align:center; margin-top: 20px;">
-      <a href="registration-info.html">📑 How to Register & Apply →</a>
-    </p>
   </main>
 
   <div data-include="../partials/footer.html"></div>
-
   <script src="../assets/js/include.js"></script>
 </body>
 </html>
