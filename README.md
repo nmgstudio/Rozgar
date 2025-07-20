@@ -17,15 +17,12 @@ A professional, accessible, and responsive multi-page job notification website f
 │   │   └── search.js
 │   ├── images/
 │   │   └── company-logo.png
-│   └── docs/         # (for policy, archive, etc. documents)
+│   └── docs/
 ├── pages/
 │   ├── index.html
 │   ├── login.html
-│   ├── register/
-│   │   ├── step1.html
-│   │   ├── step2.html
-│   │   ├── step3.html
-│   │   ├── step4.html
+│   ├── register-info.html
+│   ├── google504ff6b585c88274.html
 │   ├── application-form.html
 │   ├── feedback.html
 │   ├── old-website.html
