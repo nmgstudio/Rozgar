@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nmgstudio.github.io/Rozgar/pages/sitemap.xml
